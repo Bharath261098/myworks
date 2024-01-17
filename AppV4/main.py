@@ -6,7 +6,7 @@ from langchain.agents import create_pandas_dataframe_agent
 from langchain.llms import OpenAI
 
 # Define OpenAI API KEY
-OPENAI_API_KEY = "28c49a2bd351436d8b85ac8693e25bd4"
+OPENAI_API_KEY = ""
 
 # CSS styling
 css = '''
