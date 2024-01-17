@@ -9,7 +9,6 @@ import os
 from dotenv import load_dotenv
 from htmlTemplates import css, user_template, bot_template
 
-OPENAI_API_KEY = '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'
 
 def init_ses_states():
     st.session_state.setdefault('chat_history', [])
