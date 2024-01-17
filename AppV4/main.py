@@ -4,8 +4,6 @@ import yfinance as yf
 import pandas as pd
 from langchain.agents import create_pandas_dataframe_agent
 from langchain.llms import OpenAI
-import os
-from  apikey import apikey
 
 # Define OpenAI API KEY
 OPENAI_API_KEY = "28c49a2bd351436d8b85ac8693e25bd4"
