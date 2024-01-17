@@ -8,6 +8,14 @@ from dotenv import load_dotenv
 import sqlite3
 from htmlTemplates import css, user_template, bot_template
 
+def main():
+    st.set_page_config(page_title="Stock Price AI Bot", page_icon=":chart:")
+    st.write(css, unsafe_allow_html=True)
+    create_users_db()
+    init_ses_states()
+    st.title("Stock Price AI Bot")
+    st.caption("Visualizations and OpenAI Chatbot for Multiple Stocks Over A Specified Period")
+
 def create_users_db():
     conn = sqlite3.connect('MASTER.db')
     cursor = conn.cursor()
@@ -54,8 +62,6 @@ def init_ses_states():
 
 if __name__ == '__main__':
     load_dotenv()
-
     # Add a sample user for testing purposes
     add_user_to_db(email='sample@example.com', password='SamplePassword123')
-
     main()
