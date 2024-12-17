@@ -46,7 +46,7 @@
   <button onclick="window.location.href='options.html';">Arambikalama</button>
 
   <!-- Audio element for the sound to play on page load -->
-  <audio id="welcomeSound" src="plandoit.mp3" preload="auto"></audio>
+  <audio id="welcomeSound" src="plandoit.mp3" preload="auto" autoplay></audio>
 
   <script>
     // Play the audio when the page loads
@@ -54,7 +54,6 @@
       const sound = document.getElementById('welcomeSound');
       sound.play();
     };
-
   </script>
 </body>
 </html>
