@@ -42,7 +42,7 @@
 </head>
 <body>
   <h1>Your Lunch Invite: <span id="animal"></span>!</h1>
-  <img src="" alt="Animal Guide" class="animal" id="animalImage">
+  <img src="lunch.gif" alt="Animal Guide" class="animal" id="animalImage">
   <div class="message">
     <p>Thank you! I have a question for you...</p>
     <p>Will you join us for lunch?</p>
@@ -54,9 +54,9 @@
   const animal = params.get('animal') || 'Animal';
   document.getElementById('animal').textContent = animal;
   const animalImageMap = {
-    South Indian: 'https://tenor.com/search/street-food-gifs',
-    Italian: 'https://www.icegif.com/pizza-23/',
-    Chinese: 'https://giphy.com/explore/eating-baby-food',
+    South Indian: 'street-food.gif',
+    Italian: 'pizza.gif',
+    Chinese: 'chinese.gif',
   };
   document.getElementById('animalImage').src = animalImageMap[animal] || '';
 </script>
