@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Surprise!</title>
+  <style>
+    body {
+      text-align: center;
+      font-family: 'Arial', sans-serif;
+      background: #e6ffe6;
+    }
+    h1 {
+      color: #32cd32;
+      margin-top: 30px;
+    }
+    .message {
+      margin-top: 30px;
+      font-size: 18px;
+      color: #333;
+    }
+    .animal {
+      width: 150px;
+      margin: 20px auto;
+    }
+    button {
+      padding: 15px 30px;
+      font-size: 18px;
+      font-weight: bold;
+      background-color: #32cd32;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: transform 0.3s, background-color 0.3s;
+    }
+    button:hover {
+      transform: scale(1.1);
+      background-color: #228b22;
+    }
+  </style>
+</head>
+<body>
+  <h1>Meet Panuvom</h1>
+  <img src="vijay.gif" alt="Animal Guide" class="animal" id="animalImage">
+  <div class="message">
+    <p>Thank you!</p>
+    <p>Purse Oda Vanga</p>
+  </div>
+  
+  <!-- Audio element for the sound to play on page load -->
+  <audio id="welcomeSound" src="plandoit.mp3" preload="auto"></audio>
+
+  <script>
+    // Play the audio when the page loads
+    window.onload = function() {
+      const sound = document.getElementById('welcomeSound');
+      sound.play();
+    };
+
+    // URL query parameters handling
+    const params = new URLSearchParams(window.location.search);
+    const animal = params.get('animal') || 'Animal';
+    document.getElementById('animal').textContent = animal;
+
+    const animalImageMap = {
+      'South Indian': 'street-food.gif',
+      'Italian': 'pizza.gif',
+      'Chinese': 'chinese.gif',
+    };
+
+    // Set the animal image based on the query parameter
+    document.getElementById('animalImage').src = animalImageMap[animal] || '';
+
+    // Handle button click
+    function handleResponse() {
+      alert('Can’t wait to see you!');
+      window.location.href = 'thankyou.html';
+    }
+  </script>
+</body>
+</html>
