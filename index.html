@@ -43,17 +43,24 @@
   <p></p>
   <img src="hi.jpeg" alt="hai chellam" width="200">
   <br><br>
-  <button onclick="window.location.href='options.html';">Arambikalama</button>
+  <button onclick="startAudioAndRedirect()">Arambikalama</button>
 
   <!-- Audio element for the sound to play on page load -->
-  <audio id="welcomeSound" src="plandoit.mp3" preload="auto" autoplay></audio>
+  <audio id="welcomeSound" src="plandoit.mp3" preload="auto"></audio>
 
   <script>
-    // Play the audio when the page loads
-    window.onload = function() {
+    // Function to start audio and redirect when button is clicked
+    function startAudioAndRedirect() {
       const sound = document.getElementById('welcomeSound');
-      sound.play();
-    };
+      sound.play().then(() => {
+        // If audio starts successfully, redirect
+        window.location.href = 'options.html';
+      }).catch((error) => {
+        // If there's an issue playing audio, log an error
+        console.error("Audio playback failed", error);
+        window.location.href = 'options.html'; // Fallback navigation
+      });
+    }
   </script>
 </body>
 </html>
