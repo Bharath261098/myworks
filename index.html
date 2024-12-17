@@ -19,7 +19,7 @@
     }
     p {
       font-size: 18px;
-      color: #333;
+      color: white;
     }
     button {
       padding: 15px 30px;
@@ -40,25 +40,20 @@
 </head>
 <body>
   <h1>Hi, Suruthi Venkatachalam!</h1>
-  <p>I have a little surprise for you, but you'll have to answer some questions first!</p>
-  <img src="rohee eating.gif" alt="rohee eating" width="200">
+  <p></p>
+  <img src="hi.jpeg" alt="hai chellam" width="200">
   <br><br>
-  <button onclick="playPoppers(); if (document.querySelector('body')) { window.location.href='options.html'; } else { console.error('Navigation target not found.'); }">Arambikalama</button>
+  <button onclick="window.location.href='options.html';">Arambikalama</button>
 
   <!-- Audio element -->
-  <audio id="poppersSound" src="hai.mp3"></audio>
+  <audio id="poppersSound" src="hai.mp3" autoplay></audio>
 
   <script>
-    // Play the audio when the page loads
+    // Play the audio when the page loads automatically
     window.onload = function() {
-      playPoppers();
-    };
-
-    // Function to play the audio
-    function playPoppers() {
       const audio = document.getElementById('poppersSound');
       audio.play();
-    }
+    };
   </script>
 </body>
 </html>
