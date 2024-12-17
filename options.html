@@ -40,16 +40,6 @@
       width: 100px;
       margin: 10px auto 0;
     }
-    .input-container {
-      margin-top: 30px;
-    }
-    select, input[type="time"] {
-      padding: 10px;
-      font-size: 16px;
-      margin: 10px;
-      border-radius: 5px;
-      border: 1px solid #ccc;
-    }
   </style>
 </head>
 <body>
@@ -59,15 +49,15 @@
   <audio id="eatingSound" src="eatingchips.mp3" preload="auto"></audio>
 
   <div class="options">
-    <button onclick="playSoundAndRedirect('final.html?animal=Dog')">
+    <button onclick="playSoundAndRedirect('South Indian')">
       <img src="street-food.gif" alt="Egg" class="animal">
       South Indian
     </button>
-    <button onclick="playSoundAndRedirect('final.html?animal=Cat')">
+    <button onclick="playSoundAndRedirect('Italian')">
       <img src="pizza.gif" alt="little girl" class="animal">
       Italian
     </button>
-    <button onclick="playSoundAndRedirect('final.html?animal=Rabbit')">
+    <button onclick="playSoundAndRedirect('Chinese')">
       <img src="chinese.gif" alt="Fried Rice" class="animal">
       Chinese
     </button>
@@ -75,16 +65,15 @@
 
   <script>
     // Function to play sound and then redirect to the new page
-    function playSoundAndRedirect(url) {
+    function playSoundAndRedirect(cuisine) {
       const sound = document.getElementById('eatingSound');
-      sound.play();
+      sound.play();  // Play the sound on button click
+      
+      // Delay the redirection to allow the sound to play
       setTimeout(function() {
-        window.location.href = url;
-      }, 500); // Delay the redirect to allow the sound to play
-    }
-
-      // Redirect to the final page with day, time, and cuisine selected as query parameters
-      window.location.href = `final.html?animal=${animal}&day=${day}&time=${time}`;
+        // Redirect to the new page with the selected cuisine
+        window.location.href = `final.html?animal=${cuisine}`;
+      }, 500);  // Delay of 500ms
     }
   </script>
 </body>
