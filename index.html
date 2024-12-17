@@ -43,21 +43,16 @@
   <p></p>
   <img src="hi.jpeg" alt="hai chellam" width="200">
   <br><br>
-  <button>Arambikalama</button>
+  <button onclick="startAudioAndRedirect()">Arambikalama</button>
 
   <!-- Audio element for the sound to play on page load -->
   <audio id="welcomeSound" src="hai.mp3" preload="auto"></audio>
 
   <script>
-    // Play the audio when the page loads
-    window.onload = function() {
-      const sound = document.getElementById('welcomeSound');
-      sound.play();
-    }
-
-    // Function to handle the button click and redirect
+    // Function to play the audio and redirect to another page
     function startAudioAndRedirect() {
       const sound = document.getElementById('welcomeSound');
+      
       sound.play().then(() => {
         // Redirect to another page after audio plays
         window.location.href = 'options.html';
@@ -65,6 +60,14 @@
         // In case of error, redirect anyway
         console.error("Audio playback failed", error);
         window.location.href = 'options.html'; // Fallback navigation
+      });
+    }
+
+    // Optionally, you can still attempt to play the audio immediately when the page loads
+    window.onload = function() {
+      const sound = document.getElementById('welcomeSound');
+      sound.play().catch((error) => {
+        console.error("Audio playback failed", error);
       });
     }
   </script>
