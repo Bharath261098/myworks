@@ -40,6 +40,16 @@
       width: 100px;
       margin: 10px auto 0;
     }
+    .input-container {
+      margin-top: 30px;
+    }
+    select, input[type="time"] {
+      padding: 10px;
+      font-size: 16px;
+      margin: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
   </style>
 </head>
 <body>
@@ -63,6 +73,25 @@
     </button>
   </div>
 
+  <!-- Day and Time Selection -->
+  <div class="input-container">
+    <label for="daySelect">Choose a day:</label>
+    <select id="daySelect">
+      <option value="Friday">Friday</option>
+      <option value="Saturday">Saturday</option>
+      <option value="Sunday">Sunday</option>
+    </select>
+
+    <br><br>
+
+    <label for="timeSelect">Choose a time:</label>
+    <input type="time" id="timeSelect">
+  </div>
+
+  <br><br>
+  
+  <button onclick="submitForm()">Submit</button>
+
   <script>
     // Function to play sound and then redirect to the new page
     function playSoundAndRedirect(url) {
@@ -71,6 +100,20 @@
       setTimeout(function() {
         window.location.href = url;
       }, 500); // Delay the redirect to allow the sound to play
+    }
+
+    function submitForm() {
+      const day = document.getElementById('daySelect').value;
+      const time = document.getElementById('timeSelect').value;
+      const animal = new URLSearchParams(window.location.search).get('animal');
+
+      if (!time) {
+        alert("Please select a time.");
+        return;
+      }
+
+      // Redirect to the final page with day, time, and cuisine selected as query parameters
+      window.location.href = `final.html?animal=${animal}&day=${day}&time=${time}`;
     }
   </script>
 </body>

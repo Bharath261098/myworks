@@ -45,15 +45,16 @@
   <br><br>
   <button onclick="window.location.href='options.html';">Arambikalama</button>
 
-  <!-- Audio element -->
-  <audio id="poppersSound" src="hai.mp3" autoplay></audio>
+  <!-- Audio element for the sound to play on page load -->
+  <audio id="welcomeSound" src="plandoit.mp3" preload="auto"></audio>
 
   <script>
-    // Play the audio when the page loads automatically
+    // Play the audio when the page loads
     window.onload = function() {
-      const audio = document.getElementById('poppersSound');
-      audio.play();
+      const sound = document.getElementById('welcomeSound');
+      sound.play();
     };
+
   </script>
 </body>
 </html>
