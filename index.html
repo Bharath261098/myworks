@@ -49,12 +49,14 @@
   <audio id="welcomeSound" src="plandoit.mp3" preload="auto"></audio>
 
   <script>
-    // Play the audio when the page loads
+    // Function to play the audio and redirect to another page
     window.onload = function() {
       const sound = document.getElementById('welcomeSound');
-      sound.play();
+      sound.play().catch((error) => {
+        console.error("Audio playback failed", error);
+      });
     }
-
+    
     // Function to handle the button click and redirect
     function startAudioAndRedirect() {
       const sound = document.getElementById('welcomeSound');
