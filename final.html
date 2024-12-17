@@ -41,11 +41,11 @@
   </style>
 </head>
 <body>
-  <h1>Your Animal Guide: <span id="animal"></span>!</h1>
+  <h1>Your Lunch Invite: <span id="animal"></span>!</h1>
   <img src="" alt="Animal Guide" class="animal" id="animalImage">
   <div class="message">
-    <p>Thank you for following along! I have a question for you...</p>
-    <p>Will you join me for lunch?</p>
+    <p>Thank you! I have a question for you...</p>
+    <p>Will you join us for lunch?</p>
   </div>
   <button onclick="alert('Can’t wait to see you!')">Yes</button>
 </body>
@@ -54,9 +54,9 @@
   const animal = params.get('animal') || 'Animal';
   document.getElementById('animal').textContent = animal;
   const animalImageMap = {
-    Dog: 'https://i.imgur.com/RLvNLx6.png',
-    Cat: 'https://i.imgur.com/K3XQC9G.png',
-    Rabbit: 'https://i.imgur.com/vOwRxQc.png',
+    South Indian: 'https://tenor.com/search/street-food-gifs',
+    Italian: 'https://www.icegif.com/pizza-23/',
+    Chinese: 'https://giphy.com/explore/eating-baby-food',
   };
   document.getElementById('animalImage').src = animalImageMap[animal] || '';
 </script>
