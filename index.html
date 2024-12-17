@@ -45,29 +45,25 @@
   <br><br>
   <button onclick="startAudioAndRedirect()">Arambikalama</button>
 
-  <!-- Audio element for the sound to play on page load -->
+  <!-- Audio element for the sound to play -->
   <audio id="welcomeSound" src="hai.mp3" preload="auto"></audio>
 
   <script>
-    // Function to play the audio and redirect to another page
+    // Function to play the audio and then redirect to another page
     function startAudioAndRedirect() {
       const sound = document.getElementById('welcomeSound');
-      
+
+      // Play the audio when the button is clicked
       sound.play().then(() => {
-        // Redirect to another page after audio plays
-        window.location.href = 'options.html';
+        // Wait until the audio finishes before redirecting
+        sound.onended = function() {
+          // Redirect to the next page after the audio is finished
+          window.location.href = 'options.html';
+        };
       }).catch((error) => {
-        // In case of error, redirect anyway
+        // In case of error (e.g., autoplay restrictions), redirect anyway
         console.error("Audio playback failed", error);
         window.location.href = 'options.html'; // Fallback navigation
-      });
-    }
-
-    // Optionally, you can still attempt to play the audio immediately when the page loads
-    window.onload = function() {
-      const sound = document.getElementById('welcomeSound');
-      sound.play().catch((error) => {
-        console.error("Audio playback failed", error);
       });
     }
   </script>
