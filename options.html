@@ -3,60 +3,56 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pick Your Favorite</title>
+  <title>Welcome</title>
   <style>
     body {
       text-align: center;
-      font-family: 'Comic Sans MS', sans-serif;
-      background: #fff4e6;
+      font-family: 'Arial', sans-serif;
+      background: #a0d2eb;
+      background-image: url('https://i.pinimg.com/736x/bf/f9/e3/bff9e3235564e35dc48d6d56cef45e27.jpg'); /* Cloudy sky background */
+      background-size: cover;
     }
     h1 {
-      color: #ff8c00;
-      margin-top: 30px;
+      color: white;
+      margin-top: 50px;
+      text-shadow: 2px 2px #ffffff;
     }
-    .options {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      margin-top: 30px;
+    p {
+      font-size: 18px;
+      color: #333;
     }
     button {
-      padding: 20px;
+      padding: 15px 30px;
       font-size: 18px;
-      background-color: #ff8c00;
+      font-weight: bold;
+      background-color: #ff69b4;
       color: white;
       border: none;
-      border-radius: 50%;
+      border-radius: 10px;
       cursor: pointer;
-      box-shadow: 0 4px #d2691e;
-      transition: transform 0.3s, box-shadow 0.3s;
+      transition: transform 0.3s, background-color 0.3s;
     }
     button:hover {
-      transform: scale(1.2);
-      box-shadow: 0 6px #8b4513;
-    }
-    .animal {
-      display: block;
-      width: 100px;
-      margin: 10px auto 0;
+      transform: scale(1.1);
+      background-color: #ff1493;
     }
   </style>
 </head>
 <body>
-  <h1>Choose Your Favourite Cuisine!</h1>
-  <div class="options">
-    <button onclick="window.location.href='final.html?animal=Dog'">
-      <img src="street-food.gif" alt="Egg" class="animal">
-      South Indian
-    </button>
-    <button onclick="window.location.href='final.html?animal=Cat'">
-      <img src="pizza.gif" alt="little girl" class="animal">
-      Italian
-    </button>
-    <button onclick="window.location.href='final.html?animal=Rabbit'">
-      <img src="chinese.gif" alt="Fried Rice" class="animal">
-      Chinese
-    </button>
-  </div>
+  <h1>Hi, Suruthi Venkatachalam!</h1>
+  <p>I have a little surprise for you, but you'll have to answer some questions first!</p>
+  <img src="rohee eating.gif" alt="rohee eating" width="200">
+  <br><br>
+  <button onclick="playSounds(); if (document.querySelector('body')) { window.location.href='options.html'; } else { console.error('Navigation target not found.'); }">Arambikalama</button>
+  <audio id="poppersSound" src="poppers.mp3"></audio>
+  <audio id="eatingSound" src="eating.mp3"></audio>
+  <script>
+    function playSounds() {
+      const poppersAudio = document.getElementById('poppersSound');
+      const eatingAudio = document.getElementById('eatingSound');
+      poppersAudio.play();
+      eatingAudio.play();
+    }
+  </script>
 </body>
 </html>

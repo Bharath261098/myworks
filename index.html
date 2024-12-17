@@ -7,13 +7,13 @@
   <style>
     body {
       text-align: center;
-      font-family: 'Comic Sans MS', sans-serif;
+      font-family: 'Arial', sans-serif;
       background: #a0d2eb;
       background-image: url('https://i.pinimg.com/736x/bf/f9/e3/bff9e3235564e35dc48d6d56cef45e27.jpg'); /* Cloudy sky background */
       background-size: cover;
     }
     h1 {
-      color: #ff69b4;
+      color: white;
       margin-top: 50px;
       text-shadow: 2px 2px #ffffff;
     }
@@ -43,6 +43,13 @@
   <p>I have a little surprise for you, but you'll have to answer some questions first!</p>
   <img src="rohee eating.gif" alt="rohee eating" width="200">
   <br><br>
-  <button onclick="window.location.href='options.html'">Arambikalama</button>
+  <button onclick="playPoppers(); if (document.querySelector('body')) { window.location.href='options.html'; } else { console.error('Navigation target not found.'); }">Arambikalama</button>
+  <audio id="poppersSound" src="poppers.mp3"></audio>
+  <script>
+    function playPoppers() {
+      const audio = document.getElementById('poppersSound');
+      audio.play();
+    }
+  </script>
 </body>
 </html>
