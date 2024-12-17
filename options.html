@@ -72,8 +72,6 @@
       Chinese
     </button>
   </div>
-  
-  <button onclick="submitForm()">Submit</button>
 
   <script>
     // Function to play sound and then redirect to the new page
@@ -84,16 +82,6 @@
         window.location.href = url;
       }, 500); // Delay the redirect to allow the sound to play
     }
-
-    function submitForm() {
-      const day = document.getElementById('daySelect').value;
-      const time = document.getElementById('timeSelect').value;
-      const animal = new URLSearchParams(window.location.search).get('animal');
-
-      if (!time) {
-        alert("Please select a time.");
-        return;
-      }
 
       // Redirect to the final page with day, time, and cuisine selected as query parameters
       window.location.href = `final.html?animal=${animal}&day=${day}&time=${time}`;
