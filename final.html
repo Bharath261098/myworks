@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -42,28 +41,43 @@
   </style>
 </head>
 <body>
-  <h1>Your Lunch Invite: <span id="animal"></span>!</h1>
+  <h1>Meet Panuvom</h1>
   <img src="vijay.gif" alt="Animal Guide" class="animal" id="animalImage">
   <div class="message">
-    <p>Thank you! I have a question for you...</p>
-    <p>Will you join us for lunch?</p>
+    <p>Thank you!</p>
+    <p>Purse Oda Vanga</p>
   </div>
   <button onclick="handleResponse()">Yes</button>
-</body>
-<script>
-  const params = new URLSearchParams(window.location.search);
-  const animal = params.get('animal') || 'Animal';
-  document.getElementById('animal').textContent = animal;
-  const animalImageMap = {
-    South Indian: 'street-food.gif',
-    Italian: 'pizza.gif',
-    Chinese: 'chinese.gif',
-  };
-  document.getElementById('animalImage').src = animalImageMap[animal] || '';
 
-  function handleResponse() {
-    alert('Can’t wait to see you!');
-    window.location.href = 'thankyou.html';
-  }
-</script>
+  <!-- Audio element for the sound to play on page load -->
+  <audio id="welcomeSound" src="plandoit.mp3" preload="auto"></audio>
+
+  <script>
+    // Play the audio when the page loads
+    window.onload = function() {
+      const sound = document.getElementById('welcomeSound');
+      sound.play();
+    };
+
+    // URL query parameters handling
+    const params = new URLSearchParams(window.location.search);
+    const animal = params.get('animal') || 'Animal';
+    document.getElementById('animal').textContent = animal;
+
+    const animalImageMap = {
+      'South Indian': 'street-food.gif',
+      'Italian': 'pizza.gif',
+      'Chinese': 'chinese.gif',
+    };
+
+    // Set the animal image based on the query parameter
+    document.getElementById('animalImage').src = animalImageMap[animal] || '';
+
+    // Handle button click
+    function handleResponse() {
+      alert('Can’t wait to see you!');
+      window.location.href = 'thankyou.html';
+    }
+  </script>
+</body>
 </html>

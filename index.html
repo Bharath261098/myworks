@@ -44,8 +44,17 @@
   <img src="rohee eating.gif" alt="rohee eating" width="200">
   <br><br>
   <button onclick="playPoppers(); if (document.querySelector('body')) { window.location.href='options.html'; } else { console.error('Navigation target not found.'); }">Arambikalama</button>
-  <audio id="poppersSound" src="poppers.mp3"></audio>
+
+  <!-- Audio element -->
+  <audio id="poppersSound" src="hai.mp3"></audio>
+
   <script>
+    // Play the audio when the page loads
+    window.onload = function() {
+      playPoppers();
+    };
+
+    // Function to play the audio
     function playPoppers() {
       const audio = document.getElementById('poppersSound');
       audio.play();
